@@ -95,7 +95,7 @@ export default function Hero() {
               </button>
 
               <a
-                href="/assets/CV/CV_Meshack.pdf"
+                href="/assets/CV/Kiprono_Meshack_CV.docx"
                 download
                 target="_blank"
                 rel="noopener noreferrer"
