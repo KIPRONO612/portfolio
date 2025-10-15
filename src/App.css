@@ -36,3 +36,89 @@
     transform: rotate(360deg);
   }
 }
+/* === Glowing Scroll Progress Bar === */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4f46e5, #7c3aed, #06b6d4);
+  box-shadow: 0 0 10px #4f46e5, 0 0 20px #7c3aed;
+  border-radius: 0 2px 2px 0;
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}
+
+/* Optional gentle glow animation */
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 10px #4f46e5, 0 0 20px #7c3aed; }
+  50% { box-shadow: 0 0 20px #4f46e5, 0 0 40px #7c3aed; }
+  100% { box-shadow: 0 0 10px #4f46e5, 0 0 20px #7c3aed; }
+}
+
+.scroll-progress {
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 0 2px 2px 0;
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.1s ease-out, background 0.3s ease, box-shadow 0.3s ease;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 1; }
+  50% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+/* === Multi-Gradient Glowing Scroll Progress Bar === */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 0 2px 2px 0;
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.15s ease-out;
+}
+
+/* 🌈 Gradient animation */
+.multi-gradient {
+  background: linear-gradient(270deg, #7c3aed, #2563eb, #06b6d4, #ec4899, #f59e0b);
+  background-size: 800% 800%;
+  animation: gradientFlow 4s ease infinite, pulseGlow 2s infinite ease-in-out;
+  box-shadow: 0 0 15px #7c3aed, 0 0 25px #2563eb;
+}
+
+/* Gradient movement animation */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Gentle glow animation */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px #7c3aed, 0 0 20px #2563eb;
+  }
+  50% {
+    box-shadow: 0 0 20px #06b6d4, 0 0 40px #ec4899;
+  }
+  100% {
+    box-shadow: 0 0 10px #f59e0b, 0 0 20px #7c3aed;
+  }
+}

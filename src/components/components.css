@@ -1,0 +1,534 @@
+/* Basic shared styles for the portfolio components */
+
+/* Default dark theme */
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --muted: #9aa4b2;
+  --accent: #4f46e5;
+  --text: #e6eef6;
+}
+
+/* Light theme overrides */
+.light-theme {
+  --bg: #f5f5f5;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #4f46e5;
+  --text: #111827;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.site-header{
+  background: rgba(255,255,255,0.02);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.site-title{font-size:1.1rem;margin:0;padding:0.5rem 0}
+
+.site-header nav a{color:var(--muted);margin-left:1rem;text-decoration:none}
+
+.hero{padding:4rem 0;text-align:left}
+.hero h2{font-size:2rem;margin:0 0 0.5rem}
+.hero p{color:var(--muted)}
+.btn{display:inline-block;background:var(--accent);color:white;padding:0.5rem 0.9rem;border-radius:6px;text-decoration:none}
+
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1rem;
+}
+.project-card{background:var(--card);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.project-image{width:100%;height:140px;object-fit:cover;background:linear-gradient(90deg,#111,#222)}
+.project-body{padding:0.9rem}
+.project-desc{color:var(--muted);font-size:0.95rem}
+.project-links a{margin-right:0.6rem;color:var(--accent);text-decoration:none}
+
+.about,.contact{background:rgba(255,255,255,0.02);padding:1rem;border-radius:8px}
+
+.site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:1rem 0;text-align:center;color:var(--muted)}
+/* Scroll-to-contact button enhancements */
+.contact-scroll-btn {
+  background: linear-gradient(90deg, #4f46e5, #6366f1);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-scroll-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.5);
+}
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 rgba(99, 102, 241, 0.4); }
+  50% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.8); }
+  100% { box-shadow: 0 0 0 rgba(99, 102, 241, 0.4); }
+}
+
+.contact-scroll-btn {
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+.hero img {
+  transition: box-shadow 0.3s ease;
+}
+
+.hero img:hover {
+  box-shadow: 0 0 35px rgba(79, 70, 229, 0.9), 0 0 60px rgba(255, 255, 255, 0.2);
+}
+/* === HERO 3D GRADIENT BACKGROUND === */
+.hero-gradient {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1e1b4b, #312e81, #4f46e5, #14b8a6);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  box-shadow: 0 0 40px rgba(79, 70, 229, 0.2);
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* === HERO LAYOUT === */
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 260px;
+  z-index: 2;
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.hero-image img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 30px rgba(79, 70, 229, 0.4);
+  transform: rotateY(10deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-image img:hover {
+  transform: rotateY(0deg) scale(1.05);
+  box-shadow: 0 0 40px rgba(20, 184, 166, 0.6);
+}
+/* === PARTICLE BACKGROUND EFFECT === */
+.hero-particles {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: radial-gradient(circle at 30% 30%, #1e1b4b, #0f172a);
+}
+
+.particle-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.8), transparent);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-30px) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.8;
+  }
+}
+
+/* Keep hero content above the particles */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Optional: glowing photo hover effect */
+.hero-image img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 25px rgba(79, 70, 229, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(79, 70, 229, 0.8);
+}
+/* === SUBTLE FLOATING PARTICLES WITH MOUSE REACTION === */
+.hero-particles {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: radial-gradient(circle at 30% 30%, #1e1b4b, #0f172a);
+}
+
+.particle-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.8), transparent 70%);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: floatUp ease-in-out infinite alternate;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.7;
+  }
+}
+.hero-image img {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 30px rgba(79, 70, 229, 0.4);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.hero-image img:hover {
+  transform: rotateY(10deg) scale(1.05);
+  box-shadow: 0 0 45px rgba(99, 102, 241, 0.8), 0 0 60px rgba(168, 85, 247, 0.5);
+}
+
+/* 🔹 Hero text */
+.hero-text h2 {
+  font-size: 2.3rem;
+  background: linear-gradient(90deg, #818cf8, #a855f7, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+  color: var(--muted);
+  max-width: 480px;
+}
+
+/* Entrance animation used on hero buttons */
+.animate-fadeIn {
+  animation: fadeInUp 0.7s ease forwards;
+  opacity: 0; /* start hidden; animation will set to 1 */
+  animation-play-state: paused; /* paused until container is in-view */
+}
+
+/* When a parent wrapper gets .in-view, play the children's animations */
+.in-view .animate-fadeIn {
+  animation-play-state: running;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Button base transitions */
+.btn {
+  transition: transform 0.18s cubic-bezier(.2,.9,.3,1),
+              box-shadow 0.18s ease, background-color 0.18s ease;
+  will-change: transform;
+}
+
+/* Download button: slight lift + glow on hover */
+.download-btn {
+  background: linear-gradient(90deg, #06b6d4, #7c3aed);
+}
+.download-btn:hover,
+.download-btn:focus {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.25);
+}
+
+/* Contact button: subtle inner glow kept via pulse animation (already applied)", but add focus styles */
+.contact-scroll-btn:focus {
+  outline: 3px solid rgba(79,70,229,0.18);
+  outline-offset: 3px;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fadeIn,
+  .contact-scroll-btn,
+  .download-btn,
+  .particle { 
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* === HERO DANCE EFFECTS === */
+/* Shake (subtle jitter) */
+@keyframes heroShake {
+  0% { transform: translateY(0) rotate(0deg); }
+  20% { transform: translateY(-2px) rotate(-1deg); }
+  40% { transform: translateY(1px) rotate(1deg); }
+  60% { transform: translateY(-1px) rotate(-1deg); }
+  80% { transform: translateY(1px) rotate(0.5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Slow continuous spin (gentle 360) */
+@keyframes heroSpin360 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Apply either shake or spin to the hero container; subtle and slow */
+.hero-dance--shake .hero-content {
+  animation: heroShake 3s ease-in-out infinite;
+}
+
+.hero-dance--spin .hero-image {
+  animation: heroSpin360 18s linear infinite;
+  transform-origin: center center;
+}
+
+/* Provide a way to toggle off animation */
+.hero-dance--none .hero-content { animation: none !important; }
+
+/* Respect reduced motion again for dance */
+@media (prefers-reduced-motion: reduce) {
+  .hero-dance--shake .hero-content,
+  .hero-dance--spin .hero-content { animation: none !important; }
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.project-card {
+  background: var(--card);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
+}
+
+.project-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.project-body {
+  padding: 0.8rem;
+}
+
+/* Modal styling */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+}
+
+.modal-content img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.modal-content .project-links a {
+  margin: 0 0.5rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.modal-content .btn {
+  margin-top: 1rem;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.project-card {
+  background: var(--card);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.project-card:hover {
+  box-shadow: 0 12px 25px rgba(79, 70, 229, 0.4),
+              -5px 5px 30px rgba(79, 70, 229, 0.2);
+}
+
+.project-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.project-body {
+  padding: 0.8rem;
+}
+
+/* Modal styling */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  opacity: 0;
+  animation: fadeIn 0.25s forwards;
+}
+
+.modal-content {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  transform: scale(0.95);
+  animation: modalPop 0.25s forwards;
+}
+
+.modal-content img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.modal-content .project-links a {
+  margin: 0 0.5rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.modal-content .btn {
+  margin-top: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes modalPop {
+  to { transform: scale(1); }
+}
