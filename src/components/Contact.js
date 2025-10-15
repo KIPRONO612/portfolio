@@ -9,7 +9,7 @@ const Contact = () => {
 
       <div className="contact-buttons">
         <a
-          href="https://linkedin.com/in/yourprofile"
+          href="https://www.linkedin.com/in/meshack-kiprono-98b67438a"
           target="_blank"
           rel="noopener noreferrer"
           className="contact-btn linkedin"
@@ -18,7 +18,7 @@ const Contact = () => {
         </a>
 
         <a
-          href="https://wa.me/254700000000"
+          href="https://wa.me/254707448104"
           target="_blank"
           rel="noopener noreferrer"
           className="contact-btn whatsapp"
@@ -26,11 +26,11 @@ const Contact = () => {
           <FaWhatsapp /> WhatsApp
         </a>
 
-        <a href="tel:+254700000000" className="contact-btn call">
+        <a href="tel:+254707448104" className="contact-btn call">
           <FaPhone /> Call
         </a>
 
-        <a href="sms:+254700000000" className="contact-btn message">
+        <a href="sms:+254707448104" className="contact-btn message">
           <FaSms /> Message
         </a>
       </div>
