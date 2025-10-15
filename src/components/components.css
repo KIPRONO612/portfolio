@@ -474,6 +474,15 @@ body{
               -5px 5px 30px rgba(79, 70, 229, 0.2);
 }
 
+/* lightweight hover tilt effect (no external lib) */
+.hover-tilt {
+  transform-origin: center center;
+  transition: transform 400ms cubic-bezier(.2,.9,.3,1);
+}
+.hover-tilt:hover {
+  transform: perspective(800px) rotateX(6deg) rotateY(-6deg) scale(1.02);
+}
+
 .project-image {
   width: 100%;
   height: 140px;

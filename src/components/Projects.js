@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Tilt } from "react-tilt";
 import "./components.css";
 
 // Import your project logos from assets
@@ -31,10 +30,9 @@ export default function Projects() {
       <h2>My Projects</h2>
       <div className="projects-grid">
         {projectData.map((proj, idx) => (
-          <Tilt
+          <div
             key={idx}
-            className="project-card"
-            options={{ max: 15, scale: 1.05, speed: 400 }}
+            className="project-card hover-tilt"
             onClick={() => setSelectedProject(proj)}
           >
             <img className="project-image" src={proj.image} alt={proj.title} />
@@ -42,7 +40,7 @@ export default function Projects() {
               <h3>{proj.title}</h3>
               <p>{proj.desc}</p>
             </div>
-          </Tilt>
+          </div>
         ))}
       </div>
 
