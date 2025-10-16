@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react"; 
 import "./components.css";
-import profileImage from "../assets/mesh.JPEG";
+import profileImage from "../assets/mesh-new.JPEG";
 
 export default function Hero() {
   useEffect(() => {
