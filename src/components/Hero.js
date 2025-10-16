@@ -100,7 +100,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn download-btn opacity-0 animate-fadeIn"
-                style={{ animationDelay: "3s" }}
+                style={{ animationDelay: "2s" }}
               >
                 Download CV
               </a>
